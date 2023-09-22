@@ -15,14 +15,12 @@ public class User extends Base{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_idx" , nullable = false)
+    @Column(name = "user_idx")
     private long idx;
 
-    @NotBlank
     @Column(name = "user_id" , nullable = false)
     private String userId;
 
-    @NotNull
     @Column(name = "user_password" , nullable = false)
     private String password;
 

@@ -91,6 +91,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests((authorizeRequests) ->
                         authorizeRequests
                                 .requestMatchers("/api/docs/**").permitAll()
+                                .requestMatchers("/api/v1/auth/**").permitAll()
                                 .anyRequest().authenticated()
                 );
                 //요청에 대한 접근 규칙을 설정한다.

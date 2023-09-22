@@ -25,16 +25,17 @@ public class JwtUtils {
     private int jwtExpirationMs;
 
     //사용자의 인증 정보를 기반으로 JWT 토큰을 생성하는 메소드이다.
-    public String generateJwtToken(Authentication authentication , boolean remeberMe){
+    public String generateJwtToken(Authentication authentication , boolean rememberMe){
         UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
         // 사용자의 인증 정보를 가져온다.
+
 
         Date issuedAt = new Date();
         // 토큰이 발급된 시간을 나타내는 Date
         Date expirationDate = new Date((new Date()).getTime() + jwtExpirationMs);
         // 토큰이 만료되는 시간을 나타내는 Date
 
-        if(remeberMe){
+        if(rememberMe){
             expirationDate = new Date((new Date()).getTime() + jwtExpirationMs * 28); // 일주일
         }
 
